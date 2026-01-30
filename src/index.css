@@ -1,0 +1,212 @@
+/* --------------------------------- */
+/* Base + Reset */
+/* --------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* --------------------------------- */
+/* Navbar */
+/* --------------------------------- */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1e1e1e;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+nav .logo {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  color: rgb(248, 197, 12);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* Hamburger Styles for Responsive */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background-color: #1e1e1e;
+    flex-direction: column;
+    width: 200px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    padding-top: 1rem;
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    padding: 0.8rem;
+    text-align: center;
+  }
+}
+
+/* --------------------------------- */
+/* Hero Section */
+/* --------------------------------- */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-text {
+  max-width: 800px;
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #f8b400;
+  color: #222;
+  font-weight: bold;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.cta-button:hover {
+  background-color: #e0a500;
+}
+
+/* --------------------------------- */
+/* Service Area Map Section */
+/* --------------------------------- */
+
+.service-area-section {
+  padding: 2rem 1rem;
+  background: #f8f8f8;
+  text-align: center;
+}
+
+.service-area-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.map-wrapper-small {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 450px;
+  aspect-ratio: 4/3;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* iframe inherits container size */
+.map-wrapper-small iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* --------------------------------- */
+/* Footer */
+/* --------------------------------- */
+
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+/* --------------------------------- */
+/* Utility Responsive Typography */
+/* --------------------------------- */
+
+h2, h3 {
+  font-size: clamp(1.25rem, 4vw, 2rem);
+}
+
+p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+/* --------------------------------- */
+/* Optional Breakpoint Tweaks */
+/* --------------------------------- */
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0.5rem 1rem;
+  }
+  .hero-text {
+    padding: 1.5rem;
+  }
+}
